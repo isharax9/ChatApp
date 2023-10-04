@@ -5,9 +5,9 @@ import { Ionicons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { UserType } from "../UserContext";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-//import jwt_decode from "jwt-decode";
+import jwt_decode from "jwt-decode";
 import axios from "axios";
-//import User from "../components/User";
+import User from "../components/User";
 const HomeScreen = () => {
   const navigation = useNavigation();
   const { userId, setUserId } = useContext(UserType);
