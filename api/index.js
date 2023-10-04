@@ -15,10 +15,13 @@ app.use(passport.initialize());
 const jwt = require("jsonwebtoken");
 
 mongoose
-  .connect("mongodb+srv://macknight9889:s3fogbjefLKCq9RF@cluster0.nrhf4nz.mongodb.net/", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://macknight9889:s3fogbjefLKCq9RF@cluster0.nrhf4nz.mongodb.net/",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     console.log("Connected to Mongo Db");
   })
@@ -50,6 +53,52 @@ app.post("/register", (req, res) => {
     .catch((err) => {
       console.log("Error registering user", err);
       res.status(500).json({ message: "Error registering the user!" });
+    });
+});
+
+//function to create a token for the user
+const createToken = (userId) => {
+  // Set the token payload
+  const payload = {
+    userId: userId,
+  };
+
+  // Generate the token with a secret key and expiration time
+  const token = jwt.sign(payload, "Q$r2K6W8n!jCW%Zk", { expiresIn: "1h" });
+
+  return token;
+};
+
+//endpoint for logging in of that particular user
+app.post("/login", (req, res) => {
+  const { email, password } = req.body;
+
+  //check if the email and password are provided
+  if (!email || !password) {
+    return res
+      .status(404)
+      .json({ message: "Email and the password are required" });
+  }
+
+  //check for that user in the database
+  User.findOne({ email })
+    .then((user) => {
+      if (!user) {
+        //user not found
+        return res.status(404).json({ message: "User not found" });
+      }
+
+      //compare the provided passwords with the password in the database
+      if (user.password !== password) {
+        return res.status(404).json({ message: "Invalid Password!" });
+      }
+
+      const token = createToken(user._id);
+      res.status(200).json({ token });
+    })
+    .catch((error) => {
+      console.log("error in finding the user", error);
+      res.status(500).json({ message: "Internal server Error!" });
     });
 });
 
