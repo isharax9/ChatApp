@@ -16,7 +16,7 @@ const HomeScreen = () => {
     navigation.setOptions({
       headerTitle: "",
       headerLeft: () => (
-        <Text style={{ fontSize: 16, fontWeight: "bold" }}>MERN ChatApp</Text>
+        <Text style={{ fontSize: 16, fontWeight: "bold" }}>MERN ChatApp Global Home</Text>
       ),
       headerRight: () => (
         <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>

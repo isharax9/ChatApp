@@ -102,7 +102,7 @@ const ChatMessagesScreen = () => {
         formData.append("imageFile", {
           uri: imageUri,
           name: "image.jpg",
-          type: "image/jpeg",
+          type: "image/jpeg/png",
         });
       } else {
         formData.append("messageType", "text");
