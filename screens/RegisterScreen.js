@@ -27,7 +27,7 @@ import {
   
       // send a POST  request to the backend API to register the user
       axios
-        .post("http://192.168.165.31:8000/register", user)
+        .post("http://192.168.253.12:8000/register", user)
         .then((response) => {
           console.log(response);
           Alert.alert(
