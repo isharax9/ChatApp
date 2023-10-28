@@ -83,9 +83,15 @@ Before you begin, make sure you have the following prerequisites installed on yo
 
 Here are some screenshots that showcase the functionality of the React Native Chat App:
 
-- Registration Page
+- Registration and Login Page
+
+<img src="/assets/img1.jpg" alt="Calculator Interface" width="200" height="456"> .... <img src="/assets/img2.jpg" alt="Calculator Interface" width="200" height="456">
+
 - Home Page
+<img src="/assets/img7.jpg" alt="Calculator Interface" width="200" height="456">
+
 - Chat Page
+
 - Message Editing (Work in Progress)
 
 ## Contributing
