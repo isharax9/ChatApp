@@ -1,6 +1,4 @@
-# React Native Chat App with Expo Go
-
-This is a comprehensive readme file for your React Native Chat App developed using Expo Go for the front-end and Node.js with MongoDB Atlas for the back-end. This document will guide you through the functionalities, features, and setup instructions for your application.
+# Cross Platform ChatApp
 
 ## Table of Contents
 
@@ -31,7 +29,7 @@ The React Native Chat App is a mobile application that allows users to connect, 
 
 ### Real-Time Chat
 - Once two users become friends, they can engage in real-time chat conversations.
-- The home chat page displays all ongoing conversations with the last message received and a brief preview.
+- The home chat page displays all ongoing conversations with the last message received and a brief preview with time it received or sent.
 
 ### Chatting Page
 - Within individual chat conversations, users can exchange text messages with real-time updates.
@@ -53,11 +51,33 @@ Before you begin, make sure you have the following prerequisites installed on yo
 
 ## Getting Started
 
-1.Clone the Repository
-2.Install Dependencies
-3.Set Up MongoDB Atlas
-4.Start the Development Server
-5.Run the Application on Your Device
+1. Clone the Repository
+   
+- Use any method to clone the repo from my GitHub account. if you don't know to clone it, simply download the code as zip file and unzip it.
+
+2. Installation Process 
+- Open 2 terminals in your code editor.First One is for frontend and other is for backend
+- **adding dependencies to Frontend** :-
+- ``cd projectlocation``
+- ``npx install-expo-modules@latest``
+- ```npx expo start```
+- ``npm install cors``
+- ``yarn add react-native react-native-screens react-native-safe-area-context react-native-emoji-selector jsonwebtoken jwt-decode``
+- ```yarn add @react-navigation/native```
+- ``yarn add @react-navigation/native-stack``
+- ``npx expo install @react-native-async-storage/async-storage``
+- ```npx expo install react-native-screens react-native-safe-area-context expo-image-picker```
+- **adding dependencies to Backend** :-
+- ```cd projectlocation => cd api```
+- ```yarn add express cors body-parser mongoose multer nodemon passport passport-local jsonwebtoken jwt-decode axios```
+3. Set Up MongoDB Atlas
+
+
+4. Start the Development Server
+
+
+5. Run the Application on Your Device
+
 
 ## Screenshots
 
