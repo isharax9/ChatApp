@@ -12,9 +12,9 @@
   "dependencies": {
     "@react-navigation/native-stack": "^6.9.14",
     "axios": "^1.12.0",
-    "body-parser": "^1.20.2",
+    "body-parser": "^1.20.4",
     "cors": "^2.8.5",
-    "express": "^4.21.2",
+    "express": "^4.22.1",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^8.9.5",
     "multer": "^2.0.2",
